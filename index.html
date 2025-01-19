@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth and Moon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="content">
+        <!-- Content will be dynamically loaded here -->
+    </div>
+
+    <script>
+        // Descriptions generated using ChatGPT with the prompt:
+        // "Create creative and engaging descriptions for Earth and Moon pages targeting a general audience with a mix of scientific facts and whimsical tone."
+        const pages = {
+            earth: {
+                title: "Earth",
+                description: "Welcome to the blue jewel of the cosmos! Earth is more than just a planet; it's a bustling sphere of life, swirling clouds, and boundless wonder. From towering mountains to vibrant oceans, our home is a masterpiece of nature and the cradle of humanity. Don't forget, it's also the only place with pizza!",
+                image: "https://via.placeholder.com/400x250?text=Earth",
+                additionalImage: "https://via.placeholder.com/200x200?text=Globe",
+                active: 'earth'
+            },
+            moon: {
+                title: "Moon",
+                description: "Step into the realm of lunar magic! The Moon, Earth's constant companion, is a silent witness to our history and a beacon in the night sky. With its serene craters and silvery glow, the Moon has inspired countless tales and dreams. Fun fact: it's also where astronauts practiced their best 'Moonwalk'!",
+                image: "https://via.placeholder.com/400x250?text=Moon",
+                additionalImage: "https://via.placeholder.com/200x200?text=Crescent",
+                active: 'moon'
+            }
+        };
+
+        function renderPage(pageKey) {
+            const page = pages[pageKey];
+
+            const content = `
+                <h1>${page.title}</h1>
+                <img src="${page.image}" alt="${page.title}">
+                <p>${page.description}</p>
+                <img src="${page.additionalImage}" alt="Additional ${page.title} Image" class="secondary-image">
+                <div class="navigation">
+                    <a href="#" class="${pageKey === 'earth' ? 'active' : ''}" onclick="renderPage('earth')">Earth</a>
+                    <a href="#" class="${pageKey === 'moon' ? 'active' : ''}" onclick="renderPage('moon')">Moon</a>
+                </div>
+            `;
+
+            document.getElementById('content').innerHTML = content;
+        }
+
+        // Initial render
+        renderPage('earth');
+    </script>
+</body>
+</html>
