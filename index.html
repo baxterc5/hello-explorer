@@ -1,55 +1,24 @@
+<!-- chatgpt 4o used to generate descriptions -->
+<!-- prompt: can you give me a description of the earth and moon that are both whimsical and scientific, made for the average reader? I'd like it to touch on the beauty and life of earth and the purpose and mystery of the moon. id like them to be mid length. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earth and Moon</title>
+    <title>Earth</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container" id="content">
-        <!-- Content will be dynamically loaded here -->
+    <div class="container">
+        <h1>Earth</h1>
+        <p>Earth is the vibrant masterpiece of the solar system, teeming with life and wonder. From the azure expanse of its oceans to the lush greens of its forests, Earth is a planet alive with color and movement. Its surface tells stories of ancient mountains, shifting continents, and rivers carving paths over millennia. Wrapped in a protective atmosphere, Earth nurtures countless forms of life, all interconnected in delicate harmony. Orbiting the Sun at just the right distance, this "Goldilocks planet" is a perfect stage for the drama of existence. Beauty and purpose converge here, reminding us that Earth is not just our home but a living, breathing miracle.</p>
+        <div class="navigation">
+            <img src="images/earth.png" alt="Earth" class="nav-image active">
+            <a href="moon.html">
+                <img src="images/moon1.png" alt="Moon" class="nav-image">
+            </a>
+        </div>
     </div>
-
-    <script>
-        // Descriptions generated using ChatGPT with the prompt:
-        // "Create creative and engaging descriptions for Earth and Moon pages targeting a general audience with a mix of scientific facts and whimsical tone."
-        const pages = {
-            earth: {
-                title: "Earth",
-                description: "Welcome to the blue jewel of the cosmos! Earth is more than just a planet; it's a bustling sphere of life, swirling clouds, and boundless wonder. From towering mountains to vibrant oceans, our home is a masterpiece of nature and the cradle of humanity. Don't forget, it's also the only place with pizza!",
-                image: "https://via.placeholder.com/400x250?text=Earth",
-                additionalImage: "https://via.placeholder.com/200x200?text=Globe",
-                active: 'earth'
-            },
-            moon: {
-                title: "Moon",
-                description: "Step into the realm of lunar magic! The Moon, Earth's constant companion, is a silent witness to our history and a beacon in the night sky. With its serene craters and silvery glow, the Moon has inspired countless tales and dreams. Fun fact: it's also where astronauts practiced their best 'Moonwalk'!",
-                image: "https://via.placeholder.com/400x250?text=Moon",
-                additionalImage: "https://via.placeholder.com/200x200?text=Crescent",
-                active: 'moon'
-            }
-        };
-
-        function renderPage(pageKey) {
-            const page = pages[pageKey];
-
-            const content = `
-                <h1>${page.title}</h1>
-                <img src="${page.image}" alt="${page.title}">
-                <p>${page.description}</p>
-                <img src="${page.additionalImage}" alt="Additional ${page.title} Image" class="secondary-image">
-                <div class="navigation">
-                    <a href="#" class="${pageKey === 'earth' ? 'active' : ''}" onclick="renderPage('earth')">Earth</a>
-                    <a href="#" class="${pageKey === 'moon' ? 'active' : ''}" onclick="renderPage('moon')">Moon</a>
-                </div>
-            `;
-
-            document.getElementById('content').innerHTML = content;
-        }
-
-        // Initial render
-        renderPage('earth');
-    </script>
 </body>
 </html>
