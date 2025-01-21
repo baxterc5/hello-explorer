@@ -1,24 +1,30 @@
 body {
-    font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f0;
-    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url('images/pexels-philippedonn-1169754.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    text-align: center;
+    color: #fff;
 }
 
 .container {
     width: 80%;
     max-width: 800px;
-    border: 2px solid #000;
-    background-color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
 }
+
 
 h1 {
     font-size: 2.5rem;
@@ -32,8 +38,8 @@ p {
     margin-bottom: 20px;
 }
 
-img {
-    margin: 10px 0;
+.main-image {
+    margin: 20px 0;
     max-width: 100%;
     height: auto;
     border: 1px solid #000;
@@ -45,24 +51,41 @@ img {
 
 .navigation {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
-.navigation a {
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #000;
-    margin: 0 15px;
-    padding: 5px 10px;
-    border: 1px solid #000;
-    background-color: #e6e6e6;
+.nav-image {
+    transition: transform 0.3s, filter 0.3s;
+    cursor: pointer;
+    filter: grayscale(100%);
+    border-radius: 50%;
 }
 
-.navigation a.active {
-    background-color: #000;
-    color: #fff;
+.nav-image.active {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+    border: 2px solid #000;
 }
 
-.navigation a:hover {
-    background-color: #333;
-    color: #fff;
+.nav-image:hover {
+    filter: grayscale(0%);
+}
+
+.nav-image:not(.active):hover {
+    transform: scale(1.05);
+}
+
+/* Earth image */
+.nav-image[src*="earth.png"] {
+    width: 150px;
+    height: 150px;
+}
+
+/* Moon image */
+.nav-image[src*="moon1.png"] {
+    width: 100px;
+    height: 100px;
 }
